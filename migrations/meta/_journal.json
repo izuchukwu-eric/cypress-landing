@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1701767673475,
+      "tag": "0000_old_harrier",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1701789543659,
+      "tag": "0001_premium_christian_walker",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1701792186161,
+      "tag": "0002_thin_karma",
+      "breakpoints": true
+    }
+  ]
+}
