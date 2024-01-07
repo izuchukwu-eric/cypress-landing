@@ -230,7 +230,7 @@ const Header = () => {
         <Link href={'/login'}>
           <Button
             variant="btn-secondary"
-            className="p-1 hidden sm:block"
+            className="p-1 hidden sm:block dark:text-white"
           >
             Login
           </Button>
@@ -238,7 +238,7 @@ const Header = () => {
         <Link href="/signup">
           <Button
             variant="btn-primary"
-            className="whitespace-nowrap"
+            className="whitespace-nowrap dark:text-white"
           >
             Sign Up
           </Button>

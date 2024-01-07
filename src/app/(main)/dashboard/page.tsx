@@ -23,17 +23,15 @@ const DashboardPage = async () => {
 
     if(!workspace) return (
         <div className='bg-background h-screen w-screen flex justify-center items-center'>
-            <DashboardSetup user={user} subscription={subscription}>
-
-            </DashboardSetup>
+          <DashboardSetup user={user} subscription={subscription} />
         </div>
     )
 
     redirect(`/dashboard/${workspace.id}`);
 
-  return (
-    <div>DashboardPage</div>
-  )
+  // return (
+  //   <div>DashboardPage</div>
+  // )
 }
 
 export default DashboardPage

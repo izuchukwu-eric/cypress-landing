@@ -1,5 +1,5 @@
 import { boolean, integer, jsonb, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
-import { prices, subscriptionStatus } from "../../../migrations/schema";
+import { prices, subscriptionStatus, users, } from "../../../migrations/schema";
 import { sql } from "drizzle-orm";
 
 export const workspaces = pgTable('workspaces', {
@@ -69,3 +69,12 @@ export const subscriptions = pgTable("subscriptions", {
 	trialStart: timestamp("trial_start", { withTimezone: true, mode: 'string' }).default(sql`now()`),
 	trialEnd: timestamp("trial_end", { withTimezone: true, mode: 'string' }).default(sql`now()`),
 });
+
+export const collaborators = pgTable('collaborators', {
+    workspacesId: uuid('workspace_id').notNull().references(() => workspaces.id, { onDelete: 'cascade' }),
+    createdAt: timestamp('createdAt', {
+        withTimezone: true,
+        mode: 'string'
+    }).defaultNow().notNull(),
+    userId: uuid('user_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
+})
