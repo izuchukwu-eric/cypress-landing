@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 
 interface SelectedWorkspaceProps {
     workspace: workspace;
-    onClick?: () => void;
+    onClick?: (option: workspace) => void;
 }
 
 const SelectedWorkspace:React.FC<SelectedWorkspaceProps> = ({ workspace, onClick }) => {
@@ -27,7 +27,7 @@ const SelectedWorkspace:React.FC<SelectedWorkspaceProps> = ({ workspace, onClick
     <Link 
         href={`/dashboard/${workspace.id}`} 
         onClick={() => {
-            if(onClick) onClick()
+            if(onClick) onClick(workspace)
         }} 
         className='flex rounded-md hover:bg-muted transition-all flex-row p-2 gap-4 justify-center cursor-pointer items-center my-2'
     >
